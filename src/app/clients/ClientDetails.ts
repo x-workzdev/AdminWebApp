@@ -1,5 +1,5 @@
 export class ClientDetails {
-    clientId: Number;
+    id: Number;
     customerName: string;
     companyName: string;
     emailId : string;

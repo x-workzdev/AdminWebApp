@@ -1,6 +1,6 @@
 export class TicketDetails {
 
-    complaintId: string;
+    complaintId: number;
     companyName: string;
     model : string;
     serialNo : string;
