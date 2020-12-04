@@ -3,6 +3,8 @@ import { Observable,Subject } from "rxjs";
 import {FormControl,FormGroup,Validators} from '@angular/forms';
 import { ClientDetails } from './ClientDetails';
 import { ClientDetailsService } from './clients.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
  @Component({
    selector: 'app-clients',
@@ -11,7 +13,7 @@ import { ClientDetailsService } from './clients.service';
  })
  export class ViewClientRegistersComponent  {
 
-  constructor(private clientdetailService:ClientDetailsService) { }
+  constructor(private clientdetailService:ClientDetailsService,public location: Location, private router:Router) { }
 
   clientsArray: any[] = [];
   dtOptions: DataTables.Settings = {};
@@ -134,6 +136,13 @@ import { ClientDetailsService } from './clients.service';
 
   deleteChanged(){
     this.isDeleted=false;
+  }
+
+  refresh(): void {
+    this.router.navigateByUrl("/home", { skipLocationChange: true }).then(() => {
+      console.log(decodeURI(this.location.path()));
+      this.router.navigate([decodeURI(this.location.path())]);
+    });
   }
  
 }

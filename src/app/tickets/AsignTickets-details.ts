@@ -1,6 +1,6 @@
 
 export class AssignTicketDetails {
-    complaintId: number;
+    complaintId: string;
     companyName: string;
     model : string;
     serialNo : string;
