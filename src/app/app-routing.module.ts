@@ -4,9 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
-import { ViewticketsComponent } from './tickets/tickets.component';
 import { ViewGadgetsComponent } from './gadgets/gadgets.component';
 import { ViewClientRegistersComponent } from './clients/clients.component';
+import { ViewticketsComponent } from './tickets/tickets.component';
 
 
 const routes: Route[] = [

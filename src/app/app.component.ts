@@ -21,8 +21,8 @@ export class AppComponent {
     this.userId = sessionStorage.getItem("currentUser");
     this.fullName = sessionStorage.getItem("name");
     this.userRole = sessionStorage.getItem("role");
-    console.log('user role ='+this.userRole);
     console.log('current user='+this.userId);
+    console.log('user role ='+this.userRole);
     }
   }
 

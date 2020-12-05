@@ -7,12 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
-import { HttpClientModule } from '@angular/common/http';import { ViewticketsComponent } from './tickets/tickets.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ViewGadgetsComponent } from './gadgets/gadgets.component';
 import { CommonModule } from '@angular/common';
 import { LoginService } from './login/login.service';
 import { ViewClientRegistersComponent } from './clients/clients.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ViewticketsComponent } from './tickets/tickets.component';
 
 
 @NgModule({

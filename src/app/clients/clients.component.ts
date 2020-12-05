@@ -27,6 +27,7 @@ import { Location } from '@angular/common';
   isupdated = false; 
   isDeleted:boolean = false;  
   deleteClientDetail:any;
+  deleteStatus:any;
 
   ngOnInit() {
     this.isupdated=false;
@@ -49,7 +50,8 @@ import { Location } from '@angular/common';
       .subscribe(
         data => {
           this.isDeleted = true;
-          console.log(data);
+          this.deleteStatus = data.message;
+          console.log("delete message="+data.message);
           this.deleteMessage=true;
           this.clientdetailService.getClientsList().subscribe(data =>{
             this.clients =data
@@ -60,8 +62,9 @@ import { Location } from '@angular/common';
 
   tempDeleteClient(clientCompany:any){
     this.isDeleted=false;
+    console.log('deleteClientDetail='+clientCompany);
     this.deleteClientDetail = clientCompany;
-    console.log('deleteClientDetail='+this.deleteClientDetail);
+    
   }
 
 

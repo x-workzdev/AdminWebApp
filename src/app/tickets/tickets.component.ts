@@ -1,8 +1,6 @@
 import { Component, OnInit,ChangeDetectionStrategy, Inject } from '@angular/core';
-import { from, Observable, Subject } from 'rxjs';
-
+import { Observable, Subject } from 'rxjs';
 import {FormControl,FormGroup,Validators} from '@angular/forms';
-
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import {DOCUMENT, Location} from '@angular/common'
 import { TicketsService } from './tickets.service';
@@ -15,6 +13,7 @@ import { AssignTicketDetails } from './AsignTickets-details';
   templateUrl: './tickets.component.html',
   styleUrls: ['./tickets.component.scss']
 })
+
 export class ViewticketsComponent implements OnInit {
   mySubscription: any;
 
@@ -77,17 +76,17 @@ export class ViewticketsComponent implements OnInit {
    
   ticketform=new FormGroup({
     companyName: new FormControl('' , Validators.required),
-    model: new FormControl('' , Validators.required),
-    serialNo: new FormControl('', Validators.required),
-    mcType : new FormControl('' , Validators.required),
-    problem : new FormControl('' , Validators.required),
+    model: new FormControl('' ,[Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+    serialNo: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+    mcType : new FormControl('' , [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+    problem : new FormControl('' , [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
     engineerEmail : new FormControl('' , Validators.required),
-    leadComment : new FormControl(),
-    complaintId : new FormControl(),
-    clientComment : new FormControl(),
-    date :new FormControl(),
-    complaintStatus:new FormControl(),
-    engineerComment:new FormControl(),
+    leadComment : new FormControl('' , [Validators.required, Validators.minLength(3), Validators.maxLength(250)]),
+    complaintId : new FormControl('' , Validators.required),
+    clientComment : new FormControl('' , [Validators.required, Validators.minLength(3), Validators.maxLength(250)]),
+    date :new FormControl('' , Validators.required),
+    complaintStatus:new FormControl('' , Validators.required),
+    engineerComment:new FormControl('' , [Validators.required, Validators.minLength(3), Validators.maxLength(250)]),
   });
 
   TicketSelected(ticket:any,cName){

@@ -19,7 +19,7 @@
                         <img src="assets/logo.svg" alt="logo" class="logo">
                       </div>
                       <p class="login-card-description">Sign into your account</p>
-                      <form [formGroup]="loginForm" #LoginInformation (ngSubmit)="Login(LoginInformation)">
+                      <form [formGroup]="loginForm" #LoginInformation (ngSubmit)="Login(LoginInformation)" autocomplete="on">
                           <div class="form-group">
                             <label for="emailId" class="sr-only">Email</label>
                             <input formControlName="emailId" type="email" name="emailId" id="emailId" class="form-control" placeholder="Email address">
