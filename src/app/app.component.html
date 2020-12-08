@@ -25,6 +25,9 @@
       <li class="active">
         <a href="#">Home</a>
       </li>
+      <li *ngIf="userRole == 'ADMIN'">
+        <a href="#" routerLink="/companyRegisteration" >Register Employee</a>
+      </li>
        <li *ngIf="userRole == 'ADMIN'" >
         <a href="#" routerLink="/clients" >Clients</a>
         </li >
@@ -43,18 +46,11 @@
   <div style="width: 80%;align-content: center;">
   <router-outlet></router-outlet>
   </div>
-  </div>
-  <script>
-    $(".nav li").on("click", function() {
-      $(".nav li").removeClass("active");
-      $(this).addClass("active");
-    });
-</script>
-    <script src="assets/js/jquery.min.assets/js"></script>
-    <script src="assets/js/popper.assets/js"></script>
-    <script src="assets/js/bootstrap.min.assets/js"></script>
-    <script src="assets/js/main.assets/js"></script> -->
-  
+  </div>  
+
+    <div *ngIf="isMobile && condition">
+    <router-outlet></router-outlet>
+    </div>
    
   <div class="footer">
     <footer>

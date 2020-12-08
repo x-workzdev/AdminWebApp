@@ -1,19 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { SignUpDetails } from './SignupDetails';
-import { Observable, Observer, of, observable } from 'rxjs';
-import { SignupService } from './signup.service';
-
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
-export class SignupComponent implements OnInit {
-  gorresponse: boolean;
-  private signupDetails = new SignUpDetails();
+export class RegisterComponent implements OnInit {
+
+  gotResponse: boolean;
+  private signupDetails = new clientRegisterDetails();
 
   constructor(private signupService: SignupService, private router: Router) { }
 
@@ -38,7 +33,7 @@ export class SignupComponent implements OnInit {
     this.signupService.sendSignUpDetails(this.signupDetails).subscribe(
       response => {
         if (Response) {
-          this.gorresponse = true;
+          this.gotResponse = true;
         }
         var records = JSON.stringify(response)
         console.log("Response =" + records);
@@ -98,4 +93,5 @@ export class SignupComponent implements OnInit {
   get Address() {
     return this.signupForm.get('address');
   }
+
 }
