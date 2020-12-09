@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   {
        this.loginDetail.emailId = this.EmailId.value;
        this.loginDetail.password = this.Password.value;
-
+         
       this.loginService.sendloginDetails(this.loginDetail).subscribe(
         (response) => {
              if (Response) { 
