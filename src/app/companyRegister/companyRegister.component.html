@@ -55,7 +55,7 @@
 
                   <div class="form-group mb-4">
                     <label for="password" class="sr-only">Password</label>
-                    <input formControlName="password" type="text" name="password" id="password" class="form-control" placeholder="Enter Password">
+                    <input formControlName="password" type="password" name="password" id="password" class="form-control" placeholder="Enter Password">
                     <div *ngIf="companyRegisterForm.get('password').invalid && (companyRegisterForm.get('password').dirty || companyRegisterForm.get('password').touched)" class="alert alert-danger">
                       <div *ngIf="companyRegisterForm.get('password').errors.required"> Password is required</div>
                       <div *ngIf="companyRegisterForm.get('password').errors.maxlength"> Password cannot be more than 10 characters long.</div>
@@ -65,7 +65,7 @@
 
                   <div class="form-group mb-4">
                     <label for="cnfPassword" class="sr-only">Confirm Password</label>
-                    <input formControlName="cnfPassword" type="text" name="cnfPassword" id="cnfPassword" class="form-control" placeholder="Enter Confirm Password">
+                    <input formControlName="cnfPassword" type="password" name="cnfPassword" id="cnfPassword" class="form-control" placeholder="Enter Confirm Password">
                     <div *ngIf="companyRegisterForm.get('cnfPassword').invalid && (companyRegisterForm.get('cnfPassword').dirty || companyRegisterForm.get('cnfPassword').touched)" class="alert alert-danger">
                       <div *ngIf="companyRegisterForm.get('cnfPassword').errors.required"> Confirm Password is required</div>
                       <div *ngIf="companyRegisterForm.get('cnfPassword').errors.maxlength"> Confirm Password cannot be more than 10 characters long.</div>
